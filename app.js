@@ -30,7 +30,13 @@ app.post('/', (req, res) => {
       }
     }]
   }  
-  
+
+//api key 
+//51133eaacf68ba10cace1bd8b19f7541-us14
+
+//id list 
+//2219a78650
+
   const toJson = JSON.stringify(data); 
   const url = 'https://us14.api.mailchimp.com/3.0/lists/2219a78650'  //us14 = server 14 
   const options = {
@@ -66,15 +72,11 @@ app.post("/success", (req, res)=>{
 })
 
 
-//api key 
-//51133eaacf68ba10cace1bd8b19f7541-us14
-
-//id list 
-//2219a78650
 
 
 
 
-app.listen(3000, () => {
+
+app.listen(process.env.PORT /*HEROKU*/||3000 /*localhost*/, () => {
   console.log("server up");
 });
